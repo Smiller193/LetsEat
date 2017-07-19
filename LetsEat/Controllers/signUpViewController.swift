@@ -43,11 +43,14 @@ class signUpViewController: UIViewController {
             }
             // succesfully authenticared user
             
-            
+            guard let uid = user?.uid else{
+            return
+            }
             let ref = Database.database().reference(fromURL: "https://lets-eat-3d728.firebaseio.com/")
            // values that will be stored in database
-            let values = ["name": name, "email": email]
-            ref.updateChildValues(values, withCompletionBlock: {
+            let userRef = ref.child("users").child(uid)
+            let values = ["username": name, "email": email]
+            userRef.updateChildValues(values, withCompletionBlock: {
             (err,ref) in
                 
                 if err != nil{
