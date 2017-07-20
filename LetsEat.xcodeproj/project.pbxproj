@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06436705869900A5D596E733 /* Pods_LetsEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA604D1D844B994EC6CD91EC /* Pods_LetsEat.framework */; };
 		07278CF61F1FAB670097B51B /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CF51F1FAB670097B51B /* signUpViewController.swift */; };
+		07278CF91F1FD3370097B51B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CF81F1FD3370097B51B /* Users.swift */; };
+		07278CFB1F20FE1A0097B51B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CFA1F20FE1A0097B51B /* UserService.swift */; };
 		07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FBC1F1E934F0029834B /* AppDelegate.swift */; };
 		07C92FC41F1E934F0029834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C92FC31F1E934F0029834B /* Assets.xcassets */; };
 		07C92FD11F1EA58E0029834B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FD01F1EA58E0029834B /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		045481E035AC25A933BC512B /* Pods-LetsEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsEat/Pods-LetsEat.release.xcconfig"; sourceTree = "<group>"; };
 		07278CF51F1FAB670097B51B /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = signUpViewController.swift; path = Controllers/signUpViewController.swift; sourceTree = "<group>"; };
+		07278CF81F1FD3370097B51B /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Models/Users.swift; sourceTree = "<group>"; };
+		07278CFA1F20FE1A0097B51B /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		07C92FB91F1E934F0029834B /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C92FBC1F1E934F0029834B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C92FC31F1E934F0029834B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +52,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07278CF71F1FD2F00097B51B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				07278CF81F1FD3370097B51B /* Users.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		07278CFC1F20FE240097B51B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				07278CFA1F20FE1A0097B51B /* UserService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		07C92FB01F1E934F0029834B = {
 			isa = PBXGroup;
 			children = (
@@ -70,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				07C92FBC1F1E934F0029834B /* AppDelegate.swift */,
+				07278CF71F1FD2F00097B51B /* Models */,
 				07C92FE01F1EA7AE0029834B /* Storyboards */,
 				07C92FDE1F1EA7720029834B /* Supporting */,
 				07C92FDF1F1EA7910029834B /* View Controllers */,
 				07C92FC31F1E934F0029834B /* Assets.xcassets */,
+				07278CFC1F20FE240097B51B /* Services */,
 			);
 			path = LetsEat;
 			sourceTree = "<group>";
@@ -252,7 +274,9 @@
 			files = (
 				07C92FE41F1EA8EE0029834B /* LoginViewController.swift in Sources */,
 				07C92FD11F1EA58E0029834B /* ViewController.swift in Sources */,
+				07278CFB1F20FE1A0097B51B /* UserService.swift in Sources */,
 				07278CF61F1FAB670097B51B /* signUpViewController.swift in Sources */,
+				07278CF91F1FD3370097B51B /* Users.swift in Sources */,
 				07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

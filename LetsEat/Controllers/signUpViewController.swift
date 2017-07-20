@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseDatabase
+import FirebaseAuth
 
 class signUpViewController: UIViewController {
     
@@ -21,8 +21,23 @@ class signUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(signUpViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+
     }
     
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,43 +45,42 @@ class signUpViewController: UIViewController {
     
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        print("sign up Pressed")
-        guard let email = emailField.text, let password = passwordField.text, let name = userNameFIeld.text else {
-            print("form is not valid")
-            return
-        }
         
-        Auth.auth().createUser(withEmail: email, password: password, completion: {(user: User?, error) in
-            if error != nil {
-                print(error!)
-                return
-            }
-            // succesfully authenticared user
+        if emailField.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please Enter Your Email and Password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
             
-            guard let uid = user?.uid else{
-            return
-            }
-            let ref = Database.database().reference(fromURL: "https://lets-eat-3d728.firebaseio.com/")
-           // values that will be stored in database
-            let userRef = ref.child("users").child(uid)
-            let values = ["username": name, "email": email]
-            userRef.updateChildValues(values, withCompletionBlock: {
-            (err,ref) in
-                
-                if err != nil{
-                    print(err!)
-                    return
+        }else{
+            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: {(user, error) in
+            
+                if error == nil {
+                    print("You have successfully signed up")
+                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                    
+                    if let initialViewController = storyboard.instantiateInitialViewController() {
+                        self.view.window?.rootViewController = initialViewController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                }else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    
                 }
                 
-                
-                print("saved user succesfully into firebase database")
-                
-            })
             
-        }
+            
+            }
+            
+            
+            
+            
             )
+        }
         
-    
-}
+    }
 }
 
