@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     @IBAction func signInButtonTapped(_ sender: Any) {
         // will login a user
         if self.emailField.text == "" || self.passwordField.text == "" {
-            let alertController = UIAlertController(title: "Erro", message: "Please enter an email and a a password", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and a a password", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
@@ -82,6 +82,23 @@ class LoginViewController: UIViewController {
         print("Button Pressed")
         self.performSegue(withIdentifier: "goToSignUp", sender: self)
     }
+    
+    
+    @IBAction func unwindToLoginViewController(_ segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "cancel" {
+                print("Cancel button tapped")
+            } 
+        }
+    }
+    
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

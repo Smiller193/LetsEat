@@ -82,7 +82,7 @@
                                         <state key="normal" title="Create an Account"/>
                                         <connections>
                                             <action selector="createAnAccountButtonTapped:" destination="rhV-jp-AhY" eventType="touchUpInside" id="WYT-jH-hik"/>
-                                            <segue destination="d27-AG-ALi" kind="show" identifier="goToSignUp" id="THe-OK-RdV"/>
+                                            <segue destination="2GN-8K-68I" kind="show" identifier="goToSignUp" id="THe-OK-RdV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -211,6 +211,13 @@
                             <constraint firstItem="d3V-Hh-w3L" firstAttribute="top" secondItem="ObV-BP-TMh" secondAttribute="bottom" constant="185" id="zkt-me-vUz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="g1u-7x-WKm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="V1r-oS-4g1">
+                            <connections>
+                                <segue destination="RI8-b9-naq" kind="unwind" identifier="cancel" unwindAction="unwindToLoginViewController:" id="hF9-9N-MD1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailField" destination="r6Y-eU-2Jn" id="z4H-qT-YD2"/>
                         <outlet property="passwordField" destination="Zth-2c-KyE" id="Rll-Dc-Yis"/>
@@ -219,8 +226,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjJ-qm-4jF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RI8-b9-naq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="-215"/>
+            <point key="canvasLocation" x="2076" y="-215.44227886056973"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sL4-O0-HEr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2GN-8K-68I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pEY-ew-sY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d27-AG-ALi" kind="relationship" relationship="rootViewController" id="vV0-Eg-Yd6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okd-CD-WTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.8" y="-215.44227886056973"/>
         </scene>
     </scenes>
     <resources>

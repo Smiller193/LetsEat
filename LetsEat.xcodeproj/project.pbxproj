@@ -11,6 +11,7 @@
 		07278CF61F1FAB670097B51B /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CF51F1FAB670097B51B /* signUpViewController.swift */; };
 		07278CF91F1FD3370097B51B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CF81F1FD3370097B51B /* Users.swift */; };
 		07278CFB1F20FE1A0097B51B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CFA1F20FE1A0097B51B /* UserService.swift */; };
+		07278CFE1F213CEF0097B51B /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CFD1F213CEF0097B51B /* Restaurants.swift */; };
 		07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FBC1F1E934F0029834B /* AppDelegate.swift */; };
 		07C92FC41F1E934F0029834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C92FC31F1E934F0029834B /* Assets.xcassets */; };
 		07C92FD11F1EA58E0029834B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FD01F1EA58E0029834B /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		07278CF51F1FAB670097B51B /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = signUpViewController.swift; path = Controllers/signUpViewController.swift; sourceTree = "<group>"; };
 		07278CF81F1FD3370097B51B /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Models/Users.swift; sourceTree = "<group>"; };
 		07278CFA1F20FE1A0097B51B /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
+		07278CFD1F213CEF0097B51B /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		07C92FB91F1E934F0029834B /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C92FBC1F1E934F0029834B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C92FC31F1E934F0029834B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				07C92FBC1F1E934F0029834B /* AppDelegate.swift */,
+				07278CFD1F213CEF0097B51B /* Restaurants.swift */,
 				07278CF71F1FD2F00097B51B /* Models */,
 				07C92FE01F1EA7AE0029834B /* Storyboards */,
 				07C92FDE1F1EA7720029834B /* Supporting */,
@@ -278,6 +281,7 @@
 				07278CF61F1FAB670097B51B /* signUpViewController.swift in Sources */,
 				07278CF91F1FD3370097B51B /* Users.swift in Sources */,
 				07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */,
+				07278CFE1F213CEF0097B51B /* Restaurants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,33 +53,68 @@ class signUpViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         }else{
-            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: {(user, error) in
             
-                if error == nil {
-                    print("You have successfully signed up")
-                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            if validateEmail(enteredEmail:emailField.text!) == true {
+                Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user: User? , error) in
                     
-                    if let initialViewController = storyboard.instantiateInitialViewController() {
-                        self.view.window?.rootViewController = initialViewController
-                        self.view.window?.makeKeyAndVisible()
+                    if error == nil {
+                        print("You have successfully signed up")
+                        
+                        guard let firUser = Auth.auth().currentUser,
+                            let username = self.userNameFIeld.text,
+                            !username.isEmpty else { return }
+                        
+                        UserService.create(firUser, username: username) { (Users) in
+                            guard user != nil else { return }
+                            
+                            //print("Created new user: \()")
+                        }
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                        
+                        if let initialViewController = storyboard.instantiateInitialViewController() {
+                            self.view.window?.rootViewController = initialViewController
+                            self.view.window?.makeKeyAndVisible()
+                        }
+                    }else{
+                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
                     }
-                }else{
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
                     
-                }
+                    
+                    
+                })
                 
-            
-            
+            }else{
+                
+                let alertController = UIAlertController(title: "Error", message: "Please Enter A Valid Email", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                present(alertController, animated: true, completion: nil)
+
+                
+                
             }
+          
             
             
             
             
-            )
+            
         }
+        
+    }
+    
+    
+    
+    func validateEmail(enteredEmail:String) -> Bool {
+        
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmail)
         
     }
 }
