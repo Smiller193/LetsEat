@@ -10,9 +10,15 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    @IBAction func letsEatButtonTapped(_ sender: Any) {
+        print("Button Pressed")
+        self.performSegue(withIdentifier: "displayRestaurants", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +29,15 @@ class ViewController: UIViewController {
         tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+        
+       // let apiToContact = "https://api.eatstreet.com/publicapi/v1/restaurant/search?latitude=40.718293&longitude=-74.002276&method=pickup&pickup-radius=2"
+       // let headers = ["X-Access-Token": "f6565a0360167144"]
+        
+        
+     
+
+
        
     }
     

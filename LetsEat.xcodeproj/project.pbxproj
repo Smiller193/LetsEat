@@ -12,6 +12,9 @@
 		07278CF91F1FD3370097B51B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CF81F1FD3370097B51B /* Users.swift */; };
 		07278CFB1F20FE1A0097B51B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CFA1F20FE1A0097B51B /* UserService.swift */; };
 		07278CFE1F213CEF0097B51B /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07278CFD1F213CEF0097B51B /* Restaurants.swift */; };
+		0730761B1F21C6E90082370D /* DisplayRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730761A1F21C6E90082370D /* DisplayRestaurantsViewController.swift */; };
+		0730761D1F21CA8B0082370D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0730761C1F21CA8B0082370D /* CoreLocation.framework */; };
+		0730761F1F21D3E80082370D /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730761E1F21D3E80082370D /* LocationService.swift */; };
 		07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FBC1F1E934F0029834B /* AppDelegate.swift */; };
 		07C92FC41F1E934F0029834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C92FC31F1E934F0029834B /* Assets.xcassets */; };
 		07C92FD11F1EA58E0029834B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C92FD01F1EA58E0029834B /* ViewController.swift */; };
@@ -28,6 +31,9 @@
 		07278CF81F1FD3370097B51B /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Models/Users.swift; sourceTree = "<group>"; };
 		07278CFA1F20FE1A0097B51B /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		07278CFD1F213CEF0097B51B /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		0730761A1F21C6E90082370D /* DisplayRestaurantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayRestaurantsViewController.swift; path = Controllers/DisplayRestaurantsViewController.swift; sourceTree = "<group>"; };
+		0730761C1F21CA8B0082370D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0730761E1F21D3E80082370D /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = Services/LocationService.swift; sourceTree = "<group>"; };
 		07C92FB91F1E934F0029834B /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C92FBC1F1E934F0029834B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C92FC31F1E934F0029834B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0730761D1F21CA8B0082370D /* CoreLocation.framework in Frameworks */,
 				06436705869900A5D596E733 /* Pods_LetsEat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +106,7 @@
 				07C92FDF1F1EA7910029834B /* View Controllers */,
 				07C92FC31F1E934F0029834B /* Assets.xcassets */,
 				07278CFC1F20FE240097B51B /* Services */,
+				0730761E1F21D3E80082370D /* LocationService.swift */,
 			);
 			path = LetsEat;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 				07C92FD01F1EA58E0029834B /* ViewController.swift */,
 				07C92FE31F1EA8EE0029834B /* LoginViewController.swift */,
 				07278CF51F1FAB670097B51B /* signUpViewController.swift */,
+				0730761A1F21C6E90082370D /* DisplayRestaurantsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 		7E623036700FF195C6957B4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0730761C1F21CA8B0082370D /* CoreLocation.framework */,
 				BA604D1D844B994EC6CD91EC /* Pods_LetsEat.framework */,
 			);
 			name = Frameworks;
@@ -277,10 +287,12 @@
 			files = (
 				07C92FE41F1EA8EE0029834B /* LoginViewController.swift in Sources */,
 				07C92FD11F1EA58E0029834B /* ViewController.swift in Sources */,
+				0730761B1F21C6E90082370D /* DisplayRestaurantsViewController.swift in Sources */,
 				07278CFB1F20FE1A0097B51B /* UserService.swift in Sources */,
 				07278CF61F1FAB670097B51B /* signUpViewController.swift in Sources */,
 				07278CF91F1FD3370097B51B /* Users.swift in Sources */,
 				07C92FBD1F1E934F0029834B /* AppDelegate.swift in Sources */,
+				0730761F1F21D3E80082370D /* LocationService.swift in Sources */,
 				07278CFE1F213CEF0097B51B /* Restaurants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
